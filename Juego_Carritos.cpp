@@ -5,7 +5,7 @@
 #include<time.h>
 
 #define ancho 100
-#define largo 25
+#define largo 30
 #define ancho_ganar 70
 
 using namespace std;
@@ -102,20 +102,21 @@ void gameover(){
 	getch();
 }
 void updateScore(){
-	gotoxy(ancho_ganar+7,5);cout<<"Puntuacion: "<<puntuacion<<endl;
+	gotoxy(ancho_ganar+7,5);cout<<" Puntuacion: "<<puntuacion<<endl;
 }
 void instrucciones(){
 	system("cls");
-	cout<<"Instrucciones";
-	cout<<"\n-------------------";
-	cout<<"\nEvita que el coche choque contra los obstaculos";
-	cout<<"\nPresiona 'a' para moverlo a la izquierda";
-	cout<<"\nPresiona 'b' para moverlo a la derecha";
-	cout<<"\nPresiona 'Esc' para salir";
-	cout<<"\nPresiona cualquier tecla para ir al menu";
+	cout<<"\n\n\t\t\t\t\t\t\tInstrucciones\n\n";
+	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
+	cout<<"\n\n\t\t\t\t\tEvita que el coche choque contra los obstaculos\n";
+	cout<<"\n\t\t\t\t\tPresiona 'a' para moverlo a la izquierda\n";
+	cout<<"\n\t\t\t\t\tPresiona 'b' para moverlo a la derecha\n";
+	cout<<"\n\t\t\t\t\tPresiona 'Esc' para salir\n";
+	cout<<"\n\t\t\t\t\tPresiona cualquier tecla para ir al menu\n";
 	getch();
 }
 void play(){
+	system("color 10");
 	carPos= -1+ancho_ganar/2;
 	puntuacion=0;
 	enemyFlag[0]=1;
@@ -129,10 +130,10 @@ void play(){
 	getEnemy(1);
 	
 	gotoxy(ancho_ganar+10,2);cout<<"Car Game";
-	gotoxy(ancho_ganar+6,4);cout<<"----------";
-	gotoxy(ancho_ganar+6,6);cout<<"----------";
-	gotoxy(ancho_ganar+7,12);cout<<"Controles";
-	gotoxy(ancho_ganar+7,13);cout<<"-------------";
+	gotoxy(ancho_ganar+6,4); cout<<"----------------";
+	gotoxy(ancho_ganar+6,6); cout<<"----------------";
+	gotoxy(ancho_ganar+7,12);cout<<"    Controles";
+	gotoxy(ancho_ganar+7,13);cout<<"---------------------";
 	gotoxy(ancho_ganar+2,14);cout<<"     Tecla A -> Izquierda";
 	gotoxy(ancho_ganar+7,15);cout<<"Tecla D -> Derecha";
 	
@@ -194,13 +195,14 @@ int main(){
 	srand((unsigned)time(NULL));
 	do{
 		system("cls");
-		gotoxy(10,5); cout<<"---------------------";
-		gotoxy(10,6); cout<<"|     Car Game      |";
-		gotoxy(10,7); cout<<"---------------------";
-		gotoxy(10,9); cout<<"1- Iniciar juego";
-		gotoxy(10,10); cout<<"2- Instrucciones";
-		gotoxy(10,11); cout<<"3- Quitar";
-		gotoxy(10,13); cout<<"Selecciona una opcion";
+		system("color 10");
+		gotoxy(50,5); cout<<"---------------------";
+		gotoxy(50,6); cout<<"|     Car Game      |";
+		gotoxy(50,7); cout<<"---------------------";
+		gotoxy(53,9); cout<<"1- Iniciar juego";
+		gotoxy(53,10); cout<<"2- Instrucciones";
+		gotoxy(53,11); cout<<"3- Quitar";
+		gotoxy(50,13); cout<<"Selecciona una opcion ";
 		char op = getche();
 		if(op=='1')
 			play();
